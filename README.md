@@ -62,7 +62,7 @@ frontend/     Next.js dashboard
 python -m venv venv
 venv\Scripts\Activate.ps1        # Windows PowerShell
 pip install -r requirements.txt
-cp .env.example .env             # fill in GROQ_API_KEY at minimum
+cp .env.example .env             # fill in GROQ_API_KEY at minimum; LANGSMITH_* optional for tracing
 python -m scripts.run_daily      # generates data/latest_run.json
 uvicorn api.main:app --port 8000
 ```
@@ -81,4 +81,4 @@ Visit `http://localhost:3000`.
 
 - Nifty 50 constituents are hardcoded (index membership is rebalanced by NSE a couple of times a year, so this can drift slightly out of date).
 - News headlines are general market news, not pre-matched per ticker — the generation prompt relies on the LLM to judge relevance itself.
-- LangSmith tracing is wired in but currently blocked by an external account-side 403 on trace ingestion, unrelated to this code.
+- RAGAS was evaluated for automated eval scoring but conflicts with LangGraph's dependency tree (needs pre-1.0 `langchain`); not currently included.
