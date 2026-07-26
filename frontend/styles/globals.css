@@ -1,15 +1,17 @@
 :root {
-  --bg: #f7f8fa;
-  --surface: #ffffff;
-  --border: #e5e7eb;
-  --text: #14171f;
-  --text-muted: #6b7280;
-  --accent: #4f46e5;
-  --up: #16a34a;
-  --up-bg: #ecfdf3;
-  --down: #dc2626;
-  --down-bg: #fef2f2;
-  --radius: 12px;
+  --bg: #0b0e14;
+  --surface: #121722;
+  --surface-2: #171d2b;
+  --border: #232a3b;
+  --text: #e6e9f0;
+  --text-muted: #8b93a7;
+  --accent: #818cf8;
+  --accent-bg: rgba(129, 140, 248, 0.14);
+  --up: #22c55e;
+  --up-bg: rgba(34, 197, 94, 0.14);
+  --down: #ef4444;
+  --down-bg: rgba(239, 68, 68, 0.14);
+  --radius: 14px;
 }
 
 * {
@@ -27,4 +29,9 @@ body {
 
 a {
   color: inherit;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
 }
