@@ -1,0 +1,18 @@
+What Moves a Stock Price Day to Day
+
+In the short term, stock prices move based on the balance between buyers and
+sellers, which is influenced by several common triggers:
+
+1. Earnings results - a company beating or missing analyst expectations for
+   revenue or profit often causes a sharp same-day move.
+2. Sector-wide news - a regulatory change, interest rate move by the RBI, or
+   global commodity price shift can move an entire sector at once.
+3. Broad market sentiment - if the Nifty or Sensex is falling broadly due to
+   global cues (like US Federal Reserve decisions or crude oil prices), most
+   stocks tend to fall together regardless of their individual fundamentals.
+4. Company-specific news - management changes, product launches, litigation,
+   or a major client contract can move a single stock independent of the
+   broader market.
+5. Unusually high trading volume alongside a price move is generally a signal
+   that the move reflects real, widespread investor conviction rather than a
+   few small trades.

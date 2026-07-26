@@ -1,0 +1,11 @@
+Market Capitalization
+
+Market capitalization (market cap) is the total value of a company's outstanding
+shares, calculated as: Share Price x Total Number of Shares Outstanding.
+
+Companies are typically grouped into large-cap, mid-cap, and small-cap based on
+this value. Large-cap companies (like Reliance or TCS) tend to be more stable
+and less volatile, since a large existing shareholder base and business scale
+absorb shocks more easily. Small-cap companies tend to move more sharply in
+percentage terms on the same news, because a smaller base means the same rupee
+amount of buying or selling has a bigger relative effect on the price.

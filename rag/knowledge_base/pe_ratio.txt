@@ -1,0 +1,12 @@
+Price-to-Earnings (P/E) Ratio
+
+The P/E ratio compares a company's stock price to its earnings per share (EPS).
+It is calculated as: Stock Price / Earnings Per Share.
+
+A high P/E ratio suggests investors expect strong future growth and are willing
+to pay more today for each rupee of current earnings. A low P/E ratio can mean
+the stock is undervalued, or that investors expect earnings to decline.
+
+P/E ratios are most useful when compared within the same industry, since
+different sectors naturally trade at different average P/E levels. For example,
+IT services companies often trade at different P/E multiples than banks.
