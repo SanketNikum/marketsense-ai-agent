@@ -1,0 +1,13 @@
+venv/
+evals_venv/
+node_modules/
+.next/
+rag/chroma_db/
+.git/
+.env
+frontend/
+scripts/
+agent/
+rag/
+data/ingest.py
+.claude/

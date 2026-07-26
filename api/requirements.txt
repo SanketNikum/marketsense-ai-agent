@@ -1,0 +1,7 @@
+# Slim, deploy-only dependencies for the API container.
+# The full agent stack (langgraph, groq, chromadb, sentence-transformers) is
+# NOT needed here - the deployed API only reads data/latest_run.json, it
+# never runs the agent live. That heavier stack only runs in CI
+# (scripts/run_daily.py via GitHub Actions), not in the always-on container.
+fastapi
+uvicorn[standard]
