@@ -9,3 +9,6 @@ groq              # Groq's official client - fast, free-tier open model calls
 # --- Stage 3: RAG (embeddings + vector storage) ---
 sentence-transformers   # turns text into embeddings, runs locally, free
 chromadb                # vector database - stores embeddings, does similarity search
+
+# --- Stage 4: Agent orchestration ---
+langgraph                # state machine framework for multi-step agent logic

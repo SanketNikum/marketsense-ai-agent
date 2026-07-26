@@ -9,6 +9,16 @@ import feedparser
 # A small watchlist to start with. Nifty 50 heavyweights, easy to sanity-check by eye.
 WATCHLIST = ["RELIANCE.NS", "TCS.NS", "HDFCBANK.NS", "INFY.NS", "ICICIBANK.NS"]
 
+# yfinance tickers don't match how news headlines refer to companies -
+# news says "HDFC Bank", our data says "HDFCBANK.NS". This bridges the two.
+TICKER_NAMES = {
+    "RELIANCE.NS": "Reliance Industries",
+    "TCS.NS": "TCS",
+    "HDFCBANK.NS": "HDFC Bank",
+    "INFY.NS": "Infosys",
+    "ICICIBANK.NS": "ICICI Bank",
+}
+
 # Public RSS feeds - no API key needed.
 NEWS_FEEDS = [
     "https://www.moneycontrol.com/rss/marketreports.xml",
