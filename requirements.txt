@@ -17,3 +17,7 @@ langgraph                # state machine framework for multi-step agent logic
 langsmith                # tracing/observability dashboard for LangGraph runs
 # Note: ragas was tried for automated eval scoring but conflicts with
 # langgraph's dependency tree (needs pre-1.0 langchain). Skipped for now.
+
+# --- Stage 6: API ---
+fastapi                  # web framework - exposes the agent as an HTTP endpoint
+uvicorn[standard]        # ASGI server that actually runs the FastAPI app
