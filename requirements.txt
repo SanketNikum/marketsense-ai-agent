@@ -12,3 +12,8 @@ chromadb                # vector database - stores embeddings, does similarity s
 
 # --- Stage 4: Agent orchestration ---
 langgraph                # state machine framework for multi-step agent logic
+
+# --- Stage 5: Tracing ---
+langsmith                # tracing/observability dashboard for LangGraph runs
+# Note: ragas was tried for automated eval scoring but conflicts with
+# langgraph's dependency tree (needs pre-1.0 langchain). Skipped for now.

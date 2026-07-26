@@ -2,7 +2,12 @@
 Wires the node functions into an actual LangGraph state machine.
 """
 
+from dotenv import load_dotenv
 from langgraph.graph import StateGraph, END
+
+# Loads LANGSMITH_API_KEY/LANGSMITH_TRACING/LANGSMITH_PROJECT from .env.
+# LangGraph auto-traces every run once these are set - no other code needed.
+load_dotenv()
 
 from agent.state import MarketSenseState
 from agent.nodes import ingest_node, classify_node, generate_node, guardrail_node
