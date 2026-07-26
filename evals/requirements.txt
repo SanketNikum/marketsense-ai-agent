@@ -1,0 +1,7 @@
+# Install these in their OWN venv (see README) - ragas's dependencies
+# conflict with the main agent's LangGraph 1.x stack.
+ragas==0.1.21
+langchain-openai
+langchain-community
+sentence-transformers
+python-dotenv

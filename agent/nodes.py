@@ -8,6 +8,7 @@ from agent.classify import filter_significant_movers, llm_classify_mover
 from agent.generate import generate_story
 from agent.guardrails import check_guardrails
 from agent.cache import get_cached_story, store_in_cache
+from rag.vectorstore import query_vectorstore
 from data.ingest import fetch_prices, fetch_news, WATCHLIST, NEWS_FEEDS
 
 MAX_RETRIES = 2
@@ -42,11 +43,20 @@ def generate_node(state: MarketSenseState) -> dict:
 
         if cached_story is not None:
             story_text = cached_story
+            # Retrieval is deterministic for the same mover, so re-querying (cheap,
+            # no LLM call) recovers the context a cache hit would have used - needed
+            # for RAGAS faithfulness scoring even when generation itself was skipped.
+            context = [
+                c["text"]
+                for c in query_vectorstore(
+                    f"{mover['ticker']} stock price movement explanation", n_results=2
+                )
+            ]
         else:
-            story_text = generate_story(mover, state["news"])
+            story_text, context = generate_story(mover, state["news"])
             store_in_cache(mover, story_text)
 
-        stories.append({"ticker": mover["ticker"], "story": story_text})
+        stories.append({"ticker": mover["ticker"], "story": story_text, "context": context})
 
     return {"stories": stories}
 

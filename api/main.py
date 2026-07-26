@@ -34,4 +34,10 @@ def get_stories():
         raise HTTPException(status_code=503, detail="No daily run has completed yet")
 
     with open(RESULT_PATH, "r", encoding="utf-8") as f:
-        return json.load(f)
+        result = json.load(f)
+
+    # "context" is internal (used for RAGAS eval scoring) - strip it from the public response.
+    for story in result.get("stories", []):
+        story.pop("context", None)
+
+    return result

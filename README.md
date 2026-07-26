@@ -18,6 +18,8 @@ Every day, MarketSense:
 
 Results are served through a FastAPI backend to a Next.js dashboard: a top-movers chart, and a sortable/filterable table where each row expands to show the classifier's own reasoning.
 
+A separate eval script scores each run's stories with RAGAS (faithfulness, answer relevancy) against the real retrieved context, using Groq as the judge model - no OpenAI key required.
+
 ## Architecture
 
 ```mermaid
@@ -39,6 +41,7 @@ A scheduled job runs this graph once a day and saves the result; the API serves 
 - **Guardrails:** automated post-generation checks (regex-based advice-language detection, numeric hallucination detection against real price data) — prompt instructions alone aren't trusted.
 - **Cost engineering:** two-tier model routing (`llama-3.1-8b-instant` for classification, `llama-3.3-70b-versatile` for generation) plus a semantic cache — measured ~22x latency reduction on cache hits (1.35s → 0.06s), zero LLM tokens spent on repeat situations.
 - **Production pattern:** scheduled batch pipeline + cached-result API, not live generation per request.
+- **Evals:** RAGAS faithfulness + answer relevancy scoring against the real retrieved context from each run, using Groq as an OpenAI-compatible judge LLM (see "Running evals" below for why this lives in its own venv).
 
 ## Tech stack
 
@@ -52,6 +55,7 @@ agent/        LangGraph state, nodes, classification, generation, guardrails, ca
 rag/          knowledge base, chunking, embeddings/vectorstore
 api/          FastAPI backend
 scripts/      scheduled daily pipeline run
+evals/        RAGAS scoring (separate venv - see below)
 frontend/     Next.js dashboard
 ```
 
@@ -77,8 +81,16 @@ npm run dev
 
 Visit `http://localhost:3000`.
 
+**Running evals:** `ragas`'s published dependencies conflict with the main agent's LangGraph 1.x stack (it needs pre-1.0 `langchain`), so it runs in its own venv and never imports `agent/*` code - it only reads the `data/latest_run.json` the main pipeline already produced.
+```bash
+python -m venv evals_venv
+evals_venv\Scripts\Activate.ps1
+pip install -r evals/requirements.txt
+python -m evals.run_ragas
+```
+
 ## Known limitations
 
 - Nifty 50 constituents are hardcoded (index membership is rebalanced by NSE a couple of times a year, so this can drift slightly out of date).
 - News headlines are general market news, not pre-matched per ticker — the generation prompt relies on the LLM to judge relevance itself.
-- RAGAS was evaluated for automated eval scoring but conflicts with LangGraph's dependency tree (needs pre-1.0 `langchain`); not currently included.
+- RAGAS eval runs can hit Groq's free-tier rate limits on larger batches, causing a few per-story scores to come back as timeouts/NaN rather than a clean number - a real constraint of using a free-tier judge model, documented rather than hidden.

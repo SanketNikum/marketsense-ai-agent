@@ -19,12 +19,17 @@ load_dotenv()
 _client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 
-def generate_story(mover: dict, news: list[dict]) -> str:
-    """Writes a short explainer for a single mover, grounded in RAG context and recent news."""
+def generate_story(mover: dict, news: list[dict]) -> tuple[str, list[str]]:
+    """
+    Writes a short explainer for a single mover, grounded in RAG context and recent news.
+    Returns (story_text, retrieved_context_texts) - the context is returned alongside the
+    story (not just used internally) so it can be saved for later RAGAS faithfulness scoring.
+    """
     context_chunks = query_vectorstore(
         f"{mover['ticker']} stock price movement explanation", n_results=2
     )
-    context_text = "\n\n".join(chunk["text"] for chunk in context_chunks)
+    context_texts = [chunk["text"] for chunk in context_chunks]
+    context_text = "\n\n".join(context_texts)
 
     headlines_text = "\n".join(f"- {article['title']}" for article in news[:10])
     company_name = TICKER_NAMES.get(mover["ticker"], mover["ticker"])
@@ -54,7 +59,7 @@ material and volume context instead, and don't claim a specific news cause.
         temperature=0.7,
     )
 
-    return response.choices[0].message.content
+    return response.choices[0].message.content, context_texts
 
 
 if __name__ == "__main__":
@@ -70,5 +75,6 @@ if __name__ == "__main__":
         {"title": "IT stocks rally on strong US tech earnings"},
     ]
 
-    story = generate_story(test_mover, test_news)
+    story, context = generate_story(test_mover, test_news)
     print(story)
+    print("\nContext used:", context)
