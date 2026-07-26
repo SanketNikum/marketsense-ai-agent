@@ -5,6 +5,7 @@ does one unit of work, and returns a dict of just the keys it wants to update.
 
 from agent.state import MarketSenseState
 from agent.classify import filter_significant_movers, llm_classify_mover
+from agent.generate import generate_story
 from data.ingest import fetch_prices, fetch_news, WATCHLIST, NEWS_FEEDS
 
 
@@ -25,3 +26,15 @@ def classify_node(state: MarketSenseState) -> dict:
         classified.append({**mover, **verdict})
 
     return {"movers": movers, "classified_movers": classified}
+
+
+def generate_node(state: MarketSenseState) -> dict:
+    """Writes a story for every mover the classifier judged worth_story=True."""
+    movers_to_write = [m for m in state["classified_movers"] if m["worth_story"]]
+
+    stories = []
+    for mover in movers_to_write:
+        story_text = generate_story(mover, state["news"])
+        stories.append({"ticker": mover["ticker"], "story": story_text})
+
+    return {"stories": stories}
