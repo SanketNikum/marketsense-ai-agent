@@ -5,3 +5,7 @@ python-dotenv     # loads secrets from .env into environment variables
 
 # --- Stage 2: LLM classification ---
 groq              # Groq's official client - fast, free-tier open model calls
+
+# --- Stage 3: RAG (embeddings + vector storage) ---
+sentence-transformers   # turns text into embeddings, runs locally, free
+chromadb                # vector database - stores embeddings, does similarity search
