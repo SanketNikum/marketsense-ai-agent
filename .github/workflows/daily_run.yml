@@ -1,0 +1,49 @@
+name: Daily agent run
+
+on:
+  schedule:
+    # 10:30 UTC = 4:00 PM IST, ~30 min after NSE market close (Mon-Fri)
+    - cron: "30 10 * * 1-5"
+  workflow_dispatch: {}  # lets us trigger it manually from the Actions tab too
+
+permissions:
+  contents: write  # needed to commit the updated data/latest_run.json back
+
+jobs:
+  run-agent:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build RAG knowledge base
+        # rag/chroma_db is gitignored and this runner starts empty each time,
+        # so the knowledge-base collection has to be rebuilt fresh here.
+        # (Side effect: the semantic cache also resets daily - it only helps
+        # within a single run, not across days. Documented in README.)
+        run: python -m rag.vectorstore
+
+      - name: Run the daily pipeline
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          LANGSMITH_API_KEY: ${{ secrets.LANGSMITH_API_KEY }}
+          LANGSMITH_TRACING: "true"
+          LANGSMITH_ENDPOINT: "https://aws.api.smith.langchain.com"
+          LANGSMITH_PROJECT: "MarketSense"
+        run: python -m scripts.run_daily
+
+      - name: Commit updated results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/latest_run.json
+          git diff --staged --quiet || git commit -m "Daily agent run: $(date -u +%Y-%m-%d)"
+          git push
