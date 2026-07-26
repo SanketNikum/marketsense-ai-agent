@@ -7,6 +7,7 @@ from agent.state import MarketSenseState
 from agent.classify import filter_significant_movers, llm_classify_mover
 from agent.generate import generate_story
 from agent.guardrails import check_guardrails
+from agent.cache import get_cached_story, store_in_cache
 from data.ingest import fetch_prices, fetch_news, WATCHLIST, NEWS_FEEDS
 
 MAX_RETRIES = 2
@@ -37,7 +38,14 @@ def generate_node(state: MarketSenseState) -> dict:
 
     stories = []
     for mover in movers_to_write:
-        story_text = generate_story(mover, state["news"])
+        cached_story = get_cached_story(mover)
+
+        if cached_story is not None:
+            story_text = cached_story
+        else:
+            story_text = generate_story(mover, state["news"])
+            store_in_cache(mover, story_text)
+
         stories.append({"ticker": mover["ticker"], "story": story_text})
 
     return {"stories": stories}
