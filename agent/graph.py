@@ -5,7 +5,7 @@ Wires the node functions into an actual LangGraph state machine.
 from langgraph.graph import StateGraph, END
 
 from agent.state import MarketSenseState
-from agent.nodes import ingest_node, classify_node, generate_node
+from agent.nodes import ingest_node, classify_node, generate_node, guardrail_node
 
 
 def route_after_classify(state: MarketSenseState) -> str:
@@ -14,11 +14,17 @@ def route_after_classify(state: MarketSenseState) -> str:
     return "generate" if has_story else "end"
 
 
+def route_after_guardrail(state: MarketSenseState) -> str:
+    """Loops back to generate on a guardrail failure (while retries remain), else ends."""
+    return "generate" if state["needs_retry"] else "end"
+
+
 graph_builder = StateGraph(MarketSenseState)
 
 graph_builder.add_node("ingest", ingest_node)
 graph_builder.add_node("classify", classify_node)
 graph_builder.add_node("generate", generate_node)
+graph_builder.add_node("guardrail", guardrail_node)
 
 graph_builder.set_entry_point("ingest")
 graph_builder.add_edge("ingest", "classify")
@@ -27,7 +33,12 @@ graph_builder.add_conditional_edges(
     route_after_classify,
     {"generate": "generate", "end": END},
 )
-graph_builder.add_edge("generate", END)
+graph_builder.add_edge("generate", "guardrail")
+graph_builder.add_conditional_edges(
+    "guardrail",
+    route_after_guardrail,
+    {"generate": "generate", "end": END},
+)
 
 graph = graph_builder.compile()
 

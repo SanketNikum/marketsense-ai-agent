@@ -12,3 +12,5 @@ class MarketSenseState(TypedDict):
     movers: list[dict]
     classified_movers: list[dict]
     stories: list[dict]
+    retry_count: int
+    needs_retry: bool
