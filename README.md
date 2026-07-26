@@ -1,5 +1,7 @@
 # MarketSense
 
+**Live demo:** [marketsense-ai-agent.vercel.app](https://marketsense-ai-agent.vercel.app) · API: [marketsense-ai-agent.onrender.com](https://marketsense-ai-agent.onrender.com/stories)
+
 An AI agent that explains why Nifty 50 stocks moved today — grounded in real price data, real news, and retrieved reference material, not model guesswork.
 
 Built as a hands-on learning project to go deep on production AI-engineering patterns: agent orchestration, RAG, automated guardrails, cost-aware model routing, and semantic caching — not just "call an LLM."
@@ -33,6 +35,8 @@ flowchart TD
 ```
 
 A scheduled job runs this graph once a day and saves the result; the API serves that saved result instantly (~0.1s) instead of re-running the full pipeline on every request.
+
+**Deployment:** the API runs on Render (Docker, deliberately dependency-light — see `api/requirements.txt`), the frontend on Vercel, and a GitHub Actions cron job runs the daily pipeline and commits the fresh result, which triggers Render to auto-redeploy. All free-tier, ₹0/month.
 
 ## Engineering highlights
 
