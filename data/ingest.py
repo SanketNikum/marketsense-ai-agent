@@ -6,18 +6,60 @@ No AI here on purpose - this is the deterministic "input" layer.
 import yfinance as yf
 import feedparser
 
-# A small watchlist to start with. Nifty 50 heavyweights, easy to sanity-check by eye.
-WATCHLIST = ["RELIANCE.NS", "TCS.NS", "HDFCBANK.NS", "INFY.NS", "ICICIBANK.NS"]
-
-# yfinance tickers don't match how news headlines refer to companies -
-# news says "HDFC Bank", our data says "HDFCBANK.NS". This bridges the two.
+# Nifty 50 constituents (approximate - index composition is rebalanced
+# periodically, so this list may drift slightly from the live index).
 TICKER_NAMES = {
-    "RELIANCE.NS": "Reliance Industries",
-    "TCS.NS": "TCS",
+    "ADANIENT.NS": "Adani Enterprises",
+    "ADANIPORTS.NS": "Adani Ports",
+    "APOLLOHOSP.NS": "Apollo Hospitals",
+    "ASIANPAINT.NS": "Asian Paints",
+    "AXISBANK.NS": "Axis Bank",
+    "BAJAJ-AUTO.NS": "Bajaj Auto",
+    "BAJFINANCE.NS": "Bajaj Finance",
+    "BAJAJFINSV.NS": "Bajaj Finserv",
+    "BEL.NS": "Bharat Electronics",
+    "BHARTIARTL.NS": "Bharti Airtel",
+    "CIPLA.NS": "Cipla",
+    "COALINDIA.NS": "Coal India",
+    "DRREDDY.NS": "Dr Reddy's Laboratories",
+    "EICHERMOT.NS": "Eicher Motors",
+    "GRASIM.NS": "Grasim Industries",
+    "HCLTECH.NS": "HCL Technologies",
     "HDFCBANK.NS": "HDFC Bank",
-    "INFY.NS": "Infosys",
+    "HDFCLIFE.NS": "HDFC Life",
+    "HEROMOTOCO.NS": "Hero MotoCorp",
+    "HINDALCO.NS": "Hindalco Industries",
+    "HINDUNILVR.NS": "Hindustan Unilever",
     "ICICIBANK.NS": "ICICI Bank",
+    "INDUSINDBK.NS": "IndusInd Bank",
+    "INFY.NS": "Infosys",
+    "ITC.NS": "ITC",
+    "JIOFIN.NS": "Jio Financial Services",
+    "KOTAKBANK.NS": "Kotak Mahindra Bank",
+    "LT.NS": "Larsen & Toubro",
+    "M&M.NS": "Mahindra & Mahindra",
+    "MARUTI.NS": "Maruti Suzuki",
+    "NESTLEIND.NS": "Nestle India",
+    "NTPC.NS": "NTPC",
+    "ONGC.NS": "Oil & Natural Gas Corporation",
+    "POWERGRID.NS": "Power Grid Corporation",
+    "RELIANCE.NS": "Reliance Industries",
+    "SBILIFE.NS": "SBI Life Insurance",
+    "SHRIRAMFIN.NS": "Shriram Finance",
+    "SBIN.NS": "State Bank of India",
+    "SUNPHARMA.NS": "Sun Pharmaceutical",
+    "TCS.NS": "Tata Consultancy Services",
+    "TATACONSUM.NS": "Tata Consumer Products",
+    "TATAMOTORS.NS": "Tata Motors",
+    "TATASTEEL.NS": "Tata Steel",
+    "TECHM.NS": "Tech Mahindra",
+    "TITAN.NS": "Titan Company",
+    "TRENT.NS": "Trent",
+    "ULTRACEMCO.NS": "UltraTech Cement",
+    "WIPRO.NS": "Wipro",
 }
+
+WATCHLIST = list(TICKER_NAMES.keys())
 
 # Public RSS feeds - no API key needed.
 NEWS_FEEDS = [
@@ -28,13 +70,21 @@ NEWS_FEEDS = [
 
 def fetch_prices(tickers: list[str]) -> list[dict]:
     """
-    Fetch the last 2 trading days of data per ticker and compute % change.
+    Fetch the last 2 trading days of data for all tickers in one batched
+    request (one call per ticker doesn't scale once the watchlist is 50 wide),
+    and compute % change per ticker.
     Returns a list of dicts: [{"ticker": ..., "close": ..., "pct_change": ..., "volume": ...}, ...]
     """
+    data = yf.download(tickers, period="5d", group_by="ticker", progress=False, threads=True)
+
     results = []
 
     for ticker in tickers:
-        history = yf.Ticker(ticker).history(period="5d")
+        try:
+            history = data[ticker].dropna()
+        except KeyError:
+            # yfinance sometimes silently drops a ticker it couldn't resolve.
+            continue
 
         if len(history) < 2:
             # Not enough data (e.g. new listing, or market holiday) - skip instead of crashing.
