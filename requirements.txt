@@ -1,0 +1,4 @@
+# --- Stage 1: Data ingestion (no AI yet) ---
+yfinance          # free EOD stock price data from Yahoo Finance
+feedparser        # parses RSS news feeds (Moneycontrol, ET Markets)
+python-dotenv     # loads secrets from .env into environment variables
