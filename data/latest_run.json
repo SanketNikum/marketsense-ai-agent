@@ -1,363 +1,347 @@
 {
-  "generated_at": "2026-07-26T12:36:28.191890+00:00",
+  "generated_at": "2026-07-27T13:26:55.451592+00:00",
   "classified_movers": [
     {
-      "ticker": "BAJFINANCE.NS",
-      "close": 1012.8,
-      "pct_change": -2.6,
-      "volume": 18416962,
-      "worth_story": true,
-      "reason": "The 2.6% price drop in BAJFINANCE.NS, with a high trading volume of 18,416,962, suggests significant market activity and potential investor concern."
-    },
-    {
-      "ticker": "HCLTECH.NS",
-      "close": 1271.0,
-      "pct_change": 2.11,
-      "volume": 3674904,
-      "worth_story": true,
-      "reason": "HCLTECH.NS's 2.11% price change and high trading volume of 3,674,904 may indicate significant market activity or investor interest."
-    },
-    {
-      "ticker": "M&M.NS",
-      "close": 3161.4,
-      "pct_change": -2.11,
-      "volume": 2135688,
-      "worth_story": true,
-      "reason": "M&M's 2.11% price drop on high trading volume of 2,135,688 may indicate investor concerns or market volatility"
-    },
-    {
-      "ticker": "SHRIRAMFIN.NS",
-      "close": 1005.1,
-      "pct_change": -2.02,
-      "volume": 11775846,
-      "worth_story": true,
-      "reason": "The 2.02% price drop in SHRIRAMFIN.NS, with a high trading volume of 11,775,846, suggests significant investor concern and warrants further analysis."
-    },
-    {
-      "ticker": "TATACONSUM.NS",
-      "close": 1088.0,
-      "pct_change": -1.78,
-      "volume": 1644917,
-      "worth_story": true,
-      "reason": "The 1.78% decline in TATACONSUM.NS, with a trading volume of 1.6 million shares, suggests a notable shift in investor sentiment towards the stock."
-    },
-    {
-      "ticker": "HEROMOTOCO.NS",
-      "close": 5011.1,
-      "pct_change": -1.72,
-      "volume": 694927,
-      "worth_story": false,
-      "reason": "The 1.72% price drop is relatively minor and the trading volume is moderate, suggesting this move may not be a significant market event."
-    },
-    {
       "ticker": "ONGC.NS",
-      "close": 248.76,
-      "pct_change": -1.43,
-      "volume": 7645869,
+      "close": 238.56,
+      "pct_change": -4.1,
+      "volume": 19897873,
       "worth_story": true,
-      "reason": "ONGC.NS's 1.43% price drop on high trading volume of 7.6 million shares may indicate investor concerns or market trends in the energy sector."
-    },
-    {
-      "ticker": "BAJAJ-AUTO.NS",
-      "close": 11130.0,
-      "pct_change": -1.36,
-      "volume": 442440,
-      "worth_story": false,
-      "reason": "The 1.36% price drop in BAJAJ-AUTO.NS is not significant enough to warrant a standalone market-explainer story, given its relatively small decline and moderate trading volume."
-    },
-    {
-      "ticker": "HINDALCO.NS",
-      "close": 942.8,
-      "pct_change": -1.34,
-      "volume": 4494329,
-      "worth_story": true,
-      "reason": "Hindalco's 1.34% price drop on high trading volume of 4,494,329 shares may indicate investor concerns or market volatility in the metals sector."
-    },
-    {
-      "ticker": "WIPRO.NS",
-      "close": 177.12,
-      "pct_change": 1.32,
-      "volume": 13282944,
-      "worth_story": false,
-      "reason": "The 1.32% price change in WIPRO.NS is relatively minor and may not be significant enough to warrant a dedicated market-explainer story."
-    },
-    {
-      "ticker": "CIPLA.NS",
-      "close": 1410.6,
-      "pct_change": 1.26,
-      "volume": 2917791,
-      "worth_story": true,
-      "reason": "The 1.26% price change in CIPLA.NS, accompanied by a high trading volume of 2,917,791, suggests significant market activity and warrants further analysis."
-    },
-    {
-      "ticker": "DRREDDY.NS",
-      "close": 1151.7,
-      "pct_change": -1.25,
-      "volume": 4750512,
-      "worth_story": true,
-      "reason": "The 1.25% decline in DRREDDY.NS, a stock with a high trading volume of 4,750,512, may indicate a significant shift in investor sentiment."
-    },
-    {
-      "ticker": "EICHERMOT.NS",
-      "close": 7628.0,
-      "pct_change": -1.21,
-      "volume": 409577,
-      "worth_story": false,
-      "reason": "The 1.21% price drop in Eicher Motors is not significant enough to warrant a standalone story, as it is a relatively minor decline."
-    },
-    {
-      "ticker": "ASIANPAINT.NS",
-      "close": 2637.9,
-      "pct_change": -1.16,
-      "volume": 645563,
-      "worth_story": false,
-      "reason": "The 1.16% price drop in Asian Paints is not significant enough to warrant a standalone story, as it is a relatively minor decline."
-    },
-    {
-      "ticker": "INDUSINDBK.NS",
-      "close": 996.05,
-      "pct_change": -0.94,
-      "volume": 1995292,
-      "worth_story": false,
-      "reason": "The 0.94% price drop in INDUSINDBK.NS is relatively minor and may not be significant enough to warrant a dedicated market-explainer story."
-    },
-    {
-      "ticker": "TATASTEEL.NS",
-      "close": 182.67,
-      "pct_change": -0.85,
-      "volume": 16117953,
-      "worth_story": false,
-      "reason": "The 0.85% price drop in TATASTEEL.NS is not significant enough to warrant a standalone market-explainer story, given its relatively small decline."
-    },
-    {
-      "ticker": "HINDUNILVR.NS",
-      "close": 2145.0,
-      "pct_change": -0.78,
-      "volume": 1603494,
-      "worth_story": false,
-      "reason": "The 0.78% price drop in Hindustan Unilever is not significant enough to warrant a separate market-explainer story, as it is a relatively minor fluctuation."
-    },
-    {
-      "ticker": "GRASIM.NS",
-      "close": 3089.4,
-      "pct_change": -0.76,
-      "volume": 341560,
-      "worth_story": false,
-      "reason": "The 0.76% price drop in GRASIM.NS is relatively minor and may not be significant enough to warrant a dedicated market-explainer story."
-    },
-    {
-      "ticker": "ITC.NS",
-      "close": 283.45,
-      "pct_change": 0.76,
-      "volume": 24954082,
-      "worth_story": false,
-      "reason": "The 0.76% price change is relatively minor and the trading volume is high, suggesting a stable market movement."
-    },
-    {
-      "ticker": "HDFCLIFE.NS",
-      "close": 555.05,
-      "pct_change": 0.74,
-      "volume": 1354038,
-      "worth_story": false,
-      "reason": "The 0.74% price change is relatively minor and the trading volume is moderate, suggesting a lack of significant market movement."
-    },
-    {
-      "ticker": "BAJAJFINSV.NS",
-      "close": 1876.7,
-      "pct_change": -0.67,
-      "volume": 1412443,
-      "worth_story": false,
-      "reason": "The 0.67% price drop in BAJAJFINSV.NS is relatively minor and may not be significant enough to warrant a dedicated market-explainer story."
-    },
-    {
-      "ticker": "JIOFIN.NS",
-      "close": 234.71,
-      "pct_change": 0.66,
-      "volume": 10217898,
-      "worth_story": false,
-      "reason": "The 0.66% price change is relatively minor and the trading volume is high, suggesting a stable market movement."
-    },
-    {
-      "ticker": "SUNPHARMA.NS",
-      "close": 1941.1,
-      "pct_change": -0.66,
-      "volume": 1578929,
-      "worth_story": false,
-      "reason": "The 0.66% price drop in SUNPHARMA.NS is relatively minor and may not be significant enough to warrant a dedicated market-explainer story."
-    },
-    {
-      "ticker": "APOLLOHOSP.NS",
-      "close": 8805.5,
-      "pct_change": -0.64,
-      "volume": 189462,
-      "worth_story": false,
-      "reason": "The 0.64% price drop is relatively minor and the trading volume is moderate, suggesting this move may not be indicative of a larger trend."
+      "reason": "ONGC.NS's 4.1% price drop on high trading volume of 19.9 million shares may indicate significant market concerns or selling pressure."
     },
     {
       "ticker": "INFY.NS",
-      "close": 1040.9,
-      "pct_change": -0.62,
-      "volume": 29036900,
-      "worth_story": false,
-      "reason": "The 0.62% price change in INFY.NS is relatively minor and may not be significant enough to warrant a dedicated market-explainer story."
+      "close": 1079.2,
+      "pct_change": 3.68,
+      "volume": 15950759,
+      "worth_story": true,
+      "reason": "INFY.NS's 3.68% price change on high trading volume of 15,950,759 suggests significant market activity and potential investor interest."
     },
     {
-      "ticker": "HDFCBANK.NS",
-      "close": 742.8,
-      "pct_change": -0.6,
-      "volume": 23837859,
-      "worth_story": false,
-      "reason": "The 0.6% price drop in HDFCBANK.NS is relatively minor and may not be significant enough to warrant a dedicated market-explainer story."
+      "ticker": "BAJFINANCE.NS",
+      "close": 1048.3,
+      "pct_change": 3.51,
+      "volume": 7610281,
+      "worth_story": true,
+      "reason": "The 3.51% price change in BAJFINANCE.NS is significant due to its high trading volume of 7,610,281 shares."
     },
     {
-      "ticker": "ADANIPORTS.NS",
-      "close": 1768.3,
-      "pct_change": -0.57,
-      "volume": 1685770,
-      "worth_story": false,
-      "reason": "The 0.57% price change is relatively minor and the trading volume is moderate, suggesting this move may not be significant enough to warrant a full story."
+      "ticker": "SHRIRAMFIN.NS",
+      "close": 1038.2,
+      "pct_change": 3.29,
+      "volume": 9459162,
+      "worth_story": true,
+      "reason": "The 3.29% price change in SHRIRAMFIN.NS, with a trading volume of 9,459,162, suggests significant market activity and warrants further analysis."
     },
     {
-      "ticker": "POWERGRID.NS",
-      "close": 288.2,
-      "pct_change": -0.55,
-      "volume": 8474555,
+      "ticker": "ASIANPAINT.NS",
+      "close": 2710.2,
+      "pct_change": 2.74,
+      "volume": 715204,
+      "worth_story": true,
+      "reason": "Asian Paints' 2.74% price increase on a trading volume of 715,204 is significant enough to warrant attention due to its potential impact on the Indian paint industry."
+    },
+    {
+      "ticker": "M&M.NS",
+      "close": 3238.6,
+      "pct_change": 2.44,
+      "volume": 2264294,
+      "worth_story": true,
+      "reason": "M&M's 2.44% price increase on high trading volume of 2.2 million shares may indicate investor interest or market momentum."
+    },
+    {
+      "ticker": "MARUTI.NS",
+      "close": 13730.0,
+      "pct_change": 2.14,
+      "volume": 333419,
       "worth_story": false,
-      "reason": "The 0.55% price drop in POWERGRID.NS is relatively minor and may not be significant enough to warrant a dedicated market-explainer story."
+      "reason": "The 2.14% price change is relatively small and the trading volume is moderate, suggesting a minor market movement."
+    },
+    {
+      "ticker": "HEROMOTOCO.NS",
+      "close": 5113.8,
+      "pct_change": 2.05,
+      "volume": 564402,
+      "worth_story": false,
+      "reason": "The 2.05% price change is relatively small and the trading volume is moderate, suggesting a minor market movement."
+    },
+    {
+      "ticker": "HCLTECH.NS",
+      "close": 1295.9,
+      "pct_change": 1.96,
+      "volume": 3846280,
+      "worth_story": false,
+      "reason": "The 1.96% price change is relatively minor and the trading volume is moderate, suggesting a lack of significant market movement."
+    },
+    {
+      "ticker": "WIPRO.NS",
+      "close": 178.53,
+      "pct_change": 1.95,
+      "volume": 12496686,
+      "worth_story": true,
+      "reason": "WIPRO.NS's 1.95% price change on a high trading volume of 12,496,686 shares suggests significant market activity and potential investor interest."
+    },
+    {
+      "ticker": "BAJAJFINSV.NS",
+      "close": 1913.0,
+      "pct_change": 1.93,
+      "volume": 651156,
+      "worth_story": false,
+      "reason": "The 1.93% price change is relatively minor and the trading volume is moderate, suggesting this move may not be a significant market event."
+    },
+    {
+      "ticker": "EICHERMOT.NS",
+      "close": 7769.5,
+      "pct_change": 1.86,
+      "volume": 367397,
+      "worth_story": false,
+      "reason": "The 1.86% price change is relatively small and the trading volume is moderate, suggesting a minor market movement."
+    },
+    {
+      "ticker": "TCS.NS",
+      "close": 2295.6,
+      "pct_change": 1.83,
+      "volume": 4006740,
+      "worth_story": false,
+      "reason": "The 1.83% price change is relatively minor and the trading volume is moderate, suggesting a lack of significant market movement."
+    },
+    {
+      "ticker": "TATACONSUM.NS",
+      "close": 1107.4,
+      "pct_change": 1.78,
+      "volume": 2360605,
+      "worth_story": true,
+      "reason": "The 1.78% price change in TATACONSUM.NS, with a trading volume of 2,360,605, indicates a notable movement in the stock, potentially worth further analysis."
+    },
+    {
+      "ticker": "SUNPHARMA.NS",
+      "close": 1973.7,
+      "pct_change": 1.68,
+      "volume": 5414354,
+      "worth_story": true,
+      "reason": "The 1.68% price change in SUNPHARMA.NS, accompanied by a significant trading volume of 5,414,354, suggests a notable market movement that warrants further analysis."
     },
     {
       "ticker": "TRENT.NS",
-      "close": 2890.5,
-      "pct_change": 0.55,
-      "volume": 654165,
+      "close": 2938.3,
+      "pct_change": 1.65,
+      "volume": 789050,
       "worth_story": false,
-      "reason": "The 0.55% price change is relatively minor and the trading volume is moderate, suggesting this move may not be significant enough to warrant a full story."
+      "reason": "The 1.65% price change is relatively small and the trading volume is moderate, suggesting a minor market movement."
     },
     {
-      "ticker": "ADANIENT.NS",
-      "close": 3026.4,
+      "ticker": "HINDUNILVR.NS",
+      "close": 2174.6,
+      "pct_change": 1.38,
+      "volume": 698411,
+      "worth_story": false,
+      "reason": "The 1.38% price change and 698,411 trading volume are relatively minor movements for Hindustan Unilever, indicating a stable market day."
+    },
+    {
+      "ticker": "TITAN.NS",
+      "close": 4740.1,
+      "pct_change": 1.35,
+      "volume": 500674,
+      "worth_story": false,
+      "reason": "The 1.35% price change is relatively minor and the trading volume is moderate, suggesting this move may not be significant enough to warrant a full story."
+    },
+    {
+      "ticker": "INDUSINDBK.NS",
+      "close": 1006.65,
+      "pct_change": 1.06,
+      "volume": 1979066,
+      "worth_story": false,
+      "reason": "The 1.06% price change is relatively minor and the trading volume is moderate, suggesting this move may not be significant enough to warrant a full story."
+    },
+    {
+      "ticker": "NTPC.NS",
+      "close": 350.8,
+      "pct_change": 1.04,
+      "volume": 12348946,
+      "worth_story": false,
+      "reason": "The 1.04% price change is relatively minor and the trading volume is moderate, suggesting a lack of significant market movement."
+    },
+    {
+      "ticker": "TECHM.NS",
+      "close": 1575.0,
+      "pct_change": 0.99,
+      "volume": 1513077,
+      "worth_story": false,
+      "reason": "The 0.99% price change is relatively minor and the trading volume is moderate, indicating a lack of significant market movement."
+    },
+    {
+      "ticker": "ICICIBANK.NS",
+      "close": 1445.7,
+      "pct_change": 0.89,
+      "volume": 10607893,
+      "worth_story": false,
+      "reason": "The 0.89% price change is relatively minor and the trading volume is moderate, suggesting this move may not be indicative of a larger trend."
+    },
+    {
+      "ticker": "TATASTEEL.NS",
+      "close": 184.25,
+      "pct_change": 0.86,
+      "volume": 11854045,
+      "worth_story": false,
+      "reason": "The 0.86% price change is relatively minor and the trading volume is high, suggesting a stable market movement."
+    },
+    {
+      "ticker": "ITC.NS",
+      "close": 285.85,
+      "pct_change": 0.85,
+      "volume": 19308929,
+      "worth_story": false,
+      "reason": "The 0.85% price change is relatively minor and the trading volume is high, suggesting a stable market movement."
+    },
+    {
+      "ticker": "GRASIM.NS",
+      "close": 3112.4,
+      "pct_change": 0.74,
+      "volume": 266068,
+      "worth_story": false,
+      "reason": "The 0.74% price change and 266,068 trading volume are relatively minor and may not be indicative of significant market movement."
+    },
+    {
+      "ticker": "JIOFIN.NS",
+      "close": 236.17,
+      "pct_change": 0.62,
+      "volume": 6975409,
+      "worth_story": false,
+      "reason": "The 0.62% price change is relatively minor and the trading volume is moderate, suggesting this move may not be indicative of significant market activity."
+    },
+    {
+      "ticker": "SBIN.NS",
+      "close": 1020.6,
+      "pct_change": 0.55,
+      "volume": 6090840,
+      "worth_story": false,
+      "reason": "The 0.55% price change in SBIN.NS is relatively minor and may not be significant enough to warrant a dedicated market-explainer story."
+    },
+    {
+      "ticker": "LT.NS",
+      "close": 3806.0,
       "pct_change": 0.54,
-      "volume": 1280635,
+      "volume": 1453443,
       "worth_story": false,
       "reason": "The 0.54% price change is relatively minor and the trading volume is moderate, suggesting this move may not be significant enough to warrant a full story."
     },
     {
-      "ticker": "ULTRACEMCO.NS",
-      "close": 11846.0,
-      "pct_change": -0.52,
-      "volume": 229015,
+      "ticker": "BEL.NS",
+      "close": 407.15,
+      "pct_change": 0.53,
+      "volume": 9677934,
       "worth_story": false,
-      "reason": "The 0.52% price drop in UltraTech Cement is not significant enough to warrant a standalone market-explainer story."
+      "reason": "The 0.53% price change is relatively minor and the trading volume is high, suggesting a normal day of trading."
     },
     {
-      "ticker": "TCS.NS",
-      "close": 2254.3,
-      "pct_change": 0.51,
-      "volume": 3211699,
+      "ticker": "BAJAJ-AUTO.NS",
+      "close": 11183.5,
+      "pct_change": 0.48,
+      "volume": 270526,
       "worth_story": false,
-      "reason": "The 0.51% price change is relatively minor and the trading volume is moderate, indicating a lack of significant market movement."
+      "reason": "The 0.48% price change and 270,526 trading volume are relatively minor and do not indicate significant market movement."
     },
     {
-      "ticker": "BHARTIARTL.NS",
-      "close": 1898.2,
-      "pct_change": -0.46,
-      "volume": 4483600,
+      "ticker": "HDFCBANK.NS",
+      "close": 739.55,
+      "pct_change": -0.44,
+      "volume": 29664316,
       "worth_story": false,
-      "reason": "The 0.46% price change is relatively minor and the trading volume is moderate, suggesting this move may not be indicative of a larger trend."
+      "reason": "The 0.44% price drop in HDFCBANK.NS is relatively minor and may not be significant enough to warrant a dedicated market-explainer story."
     },
     {
-      "ticker": "RELIANCE.NS",
-      "close": 1278.0,
-      "pct_change": 0.46,
-      "volume": 9817000,
+      "ticker": "SBILIFE.NS",
+      "close": 1866.8,
+      "pct_change": 0.44,
+      "volume": 1098444,
       "worth_story": false,
-      "reason": "The 0.46% price change is relatively minor and the trading volume is high, suggesting a stable market movement."
+      "reason": "The 0.44% price change and 1,098,444 trading volume are relatively minor and do not indicate significant market movement."
     },
     {
-      "ticker": "TITAN.NS",
-      "close": 4677.0,
-      "pct_change": -0.43,
-      "volume": 513858,
+      "ticker": "APOLLOHOSP.NS",
+      "close": 8843.5,
+      "pct_change": 0.43,
+      "volume": 135159,
       "worth_story": false,
-      "reason": "The 0.43% price change is relatively minor and the trading volume is moderate, suggesting this move may not be indicative of a larger trend."
+      "reason": "The 0.43% price change and 135,159 trading volume are relatively minor and do not indicate significant market movement."
     },
     {
-      "ticker": "NTPC.NS",
-      "close": 347.2,
+      "ticker": "HDFCLIFE.NS",
+      "close": 552.85,
       "pct_change": -0.4,
-      "volume": 6300466,
+      "volume": 1367965,
       "worth_story": false,
-      "reason": "The 0.4% price drop in NTPC.NS is relatively minor and may not be significant enough to warrant a dedicated market-explainer story."
+      "reason": "The 0.4% price drop in HDFCLIFE.NS is relatively minor and may not be significant enough to warrant a dedicated market-explainer story."
     }
   ],
   "stories": [
     {
-      "ticker": "BAJFINANCE.NS",
-      "story": "Bajaj Finance's 2.6% price decline today may be attributed to broad market sentiment, as the stock's movement could be influenced by the overall market trend rather than company-specific news. The high trading volume of 18,416,962 shares suggests that the price move reflects widespread investor conviction. In the absence of any specific news headlines related to Bajaj Finance, it's possible that the stock is moving in tandem with the broader market, which can be driven by various factors such as global cues or sector-wide trends.",
-      "context": [
-        "In the short term, stock prices move based on the balance between buyers and\nsellers, which is influenced by several common triggers:",
-        "1. Earnings results - a company beating or missing analyst expectations for\n   revenue or profit often causes a sharp same-day move.\n2. Sector-wide news - a regulatory change, interest rate move by the RBI, or\n   global commodity price shift can move an entire sector at once.\n3. Broad market sentiment - if the Nifty or Sensex is falling broadly due to\n   global cues (like US Federal Reserve decisions or crude oil prices), most\n   stocks tend to fall together regardless of their individual fundamentals.\n4. Company-specific news - management changes, product launches, litigation,\n   or a major client contract can move a single stock independent of the\n   broader market.\n5. Unusually high trading volume alongside a price move is generally a signal\n   that the move reflects real, widespread investor conviction rather than a\n   few small trades."
-      ]
-    },
-    {
-      "ticker": "HCLTECH.NS",
-      "story": "HCL Technologies' stock price increased by 2.11% today, with a significant trading volume of 3,674,904 shares. This move suggests that there were more buyers than sellers of the stock, influencing the price upward. The relatively high trading volume indicates a notable level of interest in the stock, contributing to the price change, which is a common phenomenon driven by the balance between buyers and sellers in the short term.",
-      "context": [
-        "In the short term, stock prices move based on the balance between buyers and\nsellers, which is influenced by several common triggers:",
-        "What Moves a Stock Price Day to Day"
-      ]
-    },
-    {
-      "ticker": "M&M.NS",
-      "story": "Mahindra & Mahindra's stock price decreased by 2.11% today, with a notable trading volume of 2,135,688 shares. This volume suggests that the price move may reflect real investor conviction rather than just a few small trades. The decline could be due to various factors such as broad market sentiment, sector-wide news, or company-specific developments, but without specific news, it's difficult to pinpoint the exact cause of the move.",
-      "context": [
-        "In the short term, stock prices move based on the balance between buyers and\nsellers, which is influenced by several common triggers:",
-        "1. Earnings results - a company beating or missing analyst expectations for\n   revenue or profit often causes a sharp same-day move.\n2. Sector-wide news - a regulatory change, interest rate move by the RBI, or\n   global commodity price shift can move an entire sector at once.\n3. Broad market sentiment - if the Nifty or Sensex is falling broadly due to\n   global cues (like US Federal Reserve decisions or crude oil prices), most\n   stocks tend to fall together regardless of their individual fundamentals.\n4. Company-specific news - management changes, product launches, litigation,\n   or a major client contract can move a single stock independent of the\n   broader market.\n5. Unusually high trading volume alongside a price move is generally a signal\n   that the move reflects real, widespread investor conviction rather than a\n   few small trades."
-      ]
-    },
-    {
-      "ticker": "SHRIRAMFIN.NS",
-      "story": "Shriram Finance's stock price declined by 2.02% today, amidst a relatively high trading volume of 11,775,846 shares, suggesting that the move may reflect a significant shift in investor sentiment. The high volume indicates that the price change is likely driven by widespread investor conviction rather than a few small trades. In the absence of any clear company-specific news, the decline could be attributed to broader market sentiment or sector-wide factors, although the exact trigger is unclear.",
-      "context": [
-        "In the short term, stock prices move based on the balance between buyers and\nsellers, which is influenced by several common triggers:",
-        "1. Earnings results - a company beating or missing analyst expectations for\n   revenue or profit often causes a sharp same-day move.\n2. Sector-wide news - a regulatory change, interest rate move by the RBI, or\n   global commodity price shift can move an entire sector at once.\n3. Broad market sentiment - if the Nifty or Sensex is falling broadly due to\n   global cues (like US Federal Reserve decisions or crude oil prices), most\n   stocks tend to fall together regardless of their individual fundamentals.\n4. Company-specific news - management changes, product launches, litigation,\n   or a major client contract can move a single stock independent of the\n   broader market.\n5. Unusually high trading volume alongside a price move is generally a signal\n   that the move reflects real, widespread investor conviction rather than a\n   few small trades."
-      ]
-    },
-    {
-      "ticker": "TATACONSUM.NS",
-      "story": "Tata Consumer Products' stock price decreased by 1.78% today, with a moderate trading volume of 1,644,917 shares. This price move can be attributed to the balance between buyers and sellers in the market, which is influenced by various triggers. The relatively moderate volume suggests that the price change may be a result of normal market fluctuations, rather than a significant reaction to a specific news event.",
-      "context": [
-        "In the short term, stock prices move based on the balance between buyers and\nsellers, which is influenced by several common triggers:",
-        "What Moves a Stock Price Day to Day"
-      ]
-    },
-    {
       "ticker": "ONGC.NS",
-      "story": "The 1.43% decline in Oil & Natural Gas Corporation's stock price may be attributed to broad market sentiment, as the stock's movement could be influenced by overall market trends rather than company-specific news. The relatively high trading volume of 7,645,869 suggests that the price move reflects a significant level of investor participation. In the absence of specific news related to the company, the decline could be a result of general market factors, such as global cues or sector-wide trends, affecting the stock's price.",
+      "story": "The 4.1% decline in Oil & Natural Gas Corporation's stock price, accompanied by a significant trading volume of 19,897,873, suggests that the move may be driven by strong investor conviction. Given the lack of directly relevant news headlines, this price move could be attributed to broader market sentiment or sector-wide news, such as a change in global commodity prices or a shift in the overall energy sector. The high trading volume indicates that the price move is likely driven by a widespread reaction among investors rather than a few isolated trades.",
       "context": [
         "1. Earnings results - a company beating or missing analyst expectations for\n   revenue or profit often causes a sharp same-day move.\n2. Sector-wide news - a regulatory change, interest rate move by the RBI, or\n   global commodity price shift can move an entire sector at once.\n3. Broad market sentiment - if the Nifty or Sensex is falling broadly due to\n   global cues (like US Federal Reserve decisions or crude oil prices), most\n   stocks tend to fall together regardless of their individual fundamentals.\n4. Company-specific news - management changes, product launches, litigation,\n   or a major client contract can move a single stock independent of the\n   broader market.\n5. Unusually high trading volume alongside a price move is generally a signal\n   that the move reflects real, widespread investor conviction rather than a\n   few small trades.",
         "In the short term, stock prices move based on the balance between buyers and\nsellers, which is influenced by several common triggers:"
       ]
     },
     {
-      "ticker": "HINDALCO.NS",
-      "story": "Hindalco Industries' stock price decreased by 1.34% today, with a relatively high trading volume of 4,494,329 shares, suggesting that the move may reflect real investor conviction. The price change could be attributed to broader market sentiment, as the stock's movement may be influenced by overall market trends rather than company-specific news. The absence of any notable company-specific news headlines suggests that the decline may be part of a larger market movement, rather than a response to a particular event or announcement related to Hindalco Industries.",
+      "ticker": "INFY.NS",
+      "story": "The 3.68% price change in Infosys, accompanied by a significant trading volume of 15,950,759, suggests that the move is driven by widespread investor conviction. Given the lack of directly relevant news headlines, this price move could be attributed to company-specific news or earnings results that have influenced investor sentiment. The high trading volume indicates that the price change is likely a result of real investor conviction rather than a few small trades, but without more information, the specific cause of the move is unclear.",
+      "context": [
+        "1. Earnings results - a company beating or missing analyst expectations for\n   revenue or profit often causes a sharp same-day move.\n2. Sector-wide news - a regulatory change, interest rate move by the RBI, or\n   global commodity price shift can move an entire sector at once.\n3. Broad market sentiment - if the Nifty or Sensex is falling broadly due to\n   global cues (like US Federal Reserve decisions or crude oil prices), most\n   stocks tend to fall together regardless of their individual fundamentals.\n4. Company-specific news - management changes, product launches, litigation,\n   or a major client contract can move a single stock independent of the\n   broader market.\n5. Unusually high trading volume alongside a price move is generally a signal\n   that the move reflects real, widespread investor conviction rather than a\n   few small trades.",
+        "In the short term, stock prices move based on the balance between buyers and\nsellers, which is influenced by several common triggers:"
+      ]
+    },
+    {
+      "ticker": "BAJFINANCE.NS",
+      "story": "Bajaj Finance's 3.51% price increase was accompanied by a significant trading volume of 7,610,281, suggesting that the move reflects real investor conviction. This price move could be attributed to company-specific news or broader market sentiment, although the exact trigger is not immediately clear from recent headlines. The substantial trading volume indicates that the price change is likely driven by a widespread investor response rather than a few small trades.",
       "context": [
         "In the short term, stock prices move based on the balance between buyers and\nsellers, which is influenced by several common triggers:",
         "1. Earnings results - a company beating or missing analyst expectations for\n   revenue or profit often causes a sharp same-day move.\n2. Sector-wide news - a regulatory change, interest rate move by the RBI, or\n   global commodity price shift can move an entire sector at once.\n3. Broad market sentiment - if the Nifty or Sensex is falling broadly due to\n   global cues (like US Federal Reserve decisions or crude oil prices), most\n   stocks tend to fall together regardless of their individual fundamentals.\n4. Company-specific news - management changes, product launches, litigation,\n   or a major client contract can move a single stock independent of the\n   broader market.\n5. Unusually high trading volume alongside a price move is generally a signal\n   that the move reflects real, widespread investor conviction rather than a\n   few small trades."
       ]
     },
     {
-      "ticker": "CIPLA.NS",
-      "story": "Cipla's stock price increased by 1.26% with a significant trading volume of 2,917,791, suggesting that the move may reflect real investor conviction. This price change could be due to various factors such as company-specific news, sector-wide developments, or broader market sentiment, although no specific news has been mentioned in recent headlines. The relatively high trading volume accompanying the price move indicates that the change is likely driven by a notable shift in investor sentiment rather than just a few small trades.",
+      "ticker": "SHRIRAMFIN.NS",
+      "story": "The 3.29% price change in Shriram Finance, accompanied by a significant trading volume of 9,459,162, suggests that the move may be driven by real investor conviction rather than a few small trades. Given the lack of directly relevant news headlines, this price move could be attributed to broader market sentiment or company-specific factors, although the exact trigger is unclear. The high trading volume indicates that the price change is likely reflective of widespread investor interest or conviction in the stock.",
       "context": [
         "In the short term, stock prices move based on the balance between buyers and\nsellers, which is influenced by several common triggers:",
         "1. Earnings results - a company beating or missing analyst expectations for\n   revenue or profit often causes a sharp same-day move.\n2. Sector-wide news - a regulatory change, interest rate move by the RBI, or\n   global commodity price shift can move an entire sector at once.\n3. Broad market sentiment - if the Nifty or Sensex is falling broadly due to\n   global cues (like US Federal Reserve decisions or crude oil prices), most\n   stocks tend to fall together regardless of their individual fundamentals.\n4. Company-specific news - management changes, product launches, litigation,\n   or a major client contract can move a single stock independent of the\n   broader market.\n5. Unusually high trading volume alongside a price move is generally a signal\n   that the move reflects real, widespread investor conviction rather than a\n   few small trades."
       ]
     },
     {
-      "ticker": "DRREDDY.NS",
-      "story": "The stock price of Dr Reddy's Laboratories fell by 1.25% today, indicating a slight imbalance between buyers and sellers. With a relatively high trading volume of 4,750,512, it suggests that there was a notable amount of activity in the stock, but ultimately, sellers outnumbered buyers, leading to the decline. This short-term price movement is likely driven by the daily balance between buyers and sellers, rather than any specific news or market event.",
+      "ticker": "ASIANPAINT.NS",
+      "story": "Asian Paints' stock price increased by 2.74% today, accompanied by a moderate trading volume of 715,204 shares. This price move could be attributed to company-specific news or broader market sentiment, although no specific news headline directly related to Asian Paints is available. The moderate trading volume suggests that the price move may reflect some level of investor conviction, but without more information, it's difficult to pinpoint the exact cause of the move.",
+      "context": [
+        "In the short term, stock prices move based on the balance between buyers and\nsellers, which is influenced by several common triggers:",
+        "1. Earnings results - a company beating or missing analyst expectations for\n   revenue or profit often causes a sharp same-day move.\n2. Sector-wide news - a regulatory change, interest rate move by the RBI, or\n   global commodity price shift can move an entire sector at once.\n3. Broad market sentiment - if the Nifty or Sensex is falling broadly due to\n   global cues (like US Federal Reserve decisions or crude oil prices), most\n   stocks tend to fall together regardless of their individual fundamentals.\n4. Company-specific news - management changes, product launches, litigation,\n   or a major client contract can move a single stock independent of the\n   broader market.\n5. Unusually high trading volume alongside a price move is generally a signal\n   that the move reflects real, widespread investor conviction rather than a\n   few small trades."
+      ]
+    },
+    {
+      "ticker": "M&M.NS",
+      "story": "Mahindra & Mahindra's stock price increased by 2.44% today, accompanied by a significant trading volume of 2,264,294, suggesting that the move may reflect real investor conviction. This price change could be due to company-specific news or broader market sentiment, although no specific news headline appears to be directly related to the company. The substantial trading volume alongside the price move indicates that the change is likely driven by widespread investor interest rather than a few small trades.",
+      "context": [
+        "In the short term, stock prices move based on the balance between buyers and\nsellers, which is influenced by several common triggers:",
+        "1. Earnings results - a company beating or missing analyst expectations for\n   revenue or profit often causes a sharp same-day move.\n2. Sector-wide news - a regulatory change, interest rate move by the RBI, or\n   global commodity price shift can move an entire sector at once.\n3. Broad market sentiment - if the Nifty or Sensex is falling broadly due to\n   global cues (like US Federal Reserve decisions or crude oil prices), most\n   stocks tend to fall together regardless of their individual fundamentals.\n4. Company-specific news - management changes, product launches, litigation,\n   or a major client contract can move a single stock independent of the\n   broader market.\n5. Unusually high trading volume alongside a price move is generally a signal\n   that the move reflects real, widespread investor conviction rather than a\n   few small trades."
+      ]
+    },
+    {
+      "ticker": "WIPRO.NS",
+      "story": "Wipro's stock price has increased by 1.95% today, accompanied by a significant trading volume of over 12 million shares, suggesting that the move may be driven by real investor conviction. This price change could be the result of various factors, including company-specific news, sector-wide developments, or broader market sentiment, although no specific cause is immediately apparent. The substantial trading volume lends credibility to the price move, indicating that it may not be solely due to a few small trades.",
+      "context": [
+        "In the short term, stock prices move based on the balance between buyers and\nsellers, which is influenced by several common triggers:",
+        "1. Earnings results - a company beating or missing analyst expectations for\n   revenue or profit often causes a sharp same-day move.\n2. Sector-wide news - a regulatory change, interest rate move by the RBI, or\n   global commodity price shift can move an entire sector at once.\n3. Broad market sentiment - if the Nifty or Sensex is falling broadly due to\n   global cues (like US Federal Reserve decisions or crude oil prices), most\n   stocks tend to fall together regardless of their individual fundamentals.\n4. Company-specific news - management changes, product launches, litigation,\n   or a major client contract can move a single stock independent of the\n   broader market.\n5. Unusually high trading volume alongside a price move is generally a signal\n   that the move reflects real, widespread investor conviction rather than a\n   few small trades."
+      ]
+    },
+    {
+      "ticker": "TATACONSUM.NS",
+      "story": "The 1.78% price increase in Tata Consumer Products today can be attributed to the balance between buyers and sellers, with a relatively high trading volume of 2,360,605 indicating a notable level of market interest. This balance is influenced by various factors, although no specific news headlines appear to be directly driving this stock's movement. As a result, the price change may be reflective of general market sentiment and investor activity, rather than a reaction to a particular news event.",
+      "context": [
+        "In the short term, stock prices move based on the balance between buyers and\nsellers, which is influenced by several common triggers:",
+        "What Moves a Stock Price Day to Day"
+      ]
+    },
+    {
+      "ticker": "SUNPHARMA.NS",
+      "story": "The 1.68% price change in Sun Pharmaceutical's stock today can be attributed to the balance between buyers and sellers in the market. With a relatively high trading volume of 5,414,354, it suggests that there was a significant amount of activity around the stock, which may have contributed to the price movement. As there are no clearly relevant recent market headlines, the price change is likely driven by general market forces and investor sentiment rather than any specific news-related trigger.",
       "context": [
         "What Moves a Stock Price Day to Day",
         "In the short term, stock prices move based on the balance between buyers and\nsellers, which is influenced by several common triggers:"
