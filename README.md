@@ -83,7 +83,7 @@ cp .env.local.example .env.local
 npm run dev
 ```
 
-Visit `http://localhost:3000`.
+Visit `http://localhost:3000`
 
 **Running evals:** `ragas`'s published dependencies conflict with the main agent's LangGraph 1.x stack (it needs pre-1.0 `langchain`), so it runs in its own venv and never imports `agent/*` code - it only reads the `data/latest_run.json` the main pipeline already produced.
 ```bash
