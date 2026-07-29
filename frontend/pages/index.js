@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useEffect, useMemo, useState } from "react";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
@@ -200,141 +201,167 @@ export default function Home() {
   const belowCount = data ? data.classified_movers.length - storyCount : 0;
 
   return (
-    <div style={s.page}>
-      <header style={s.header}>
-        <div style={s.headerInner}>
-          <div>
-            <h1 style={s.title}>
-              Market<span style={s.titleAccent}>Sense</span>
-            </h1>
-            <p style={s.subtitle}>AI-generated daily market explainers, grounded in real data</p>
-          </div>
-          <LivePill />
-        </div>
+    <>
+      <Head>
+        <title>MarketSense - AI Market Move Explainer</title>
+        <meta
+          name="description"
+          content="AI-generated daily market explainers, grounded in real data. Built with LangGraph, RAG, and guardrails."
+        />
 
-        {data && (
-          <div style={s.statsRow}>
-            <StatTile label="Tracked stocks" value={data.classified_movers.length} />
-            <StatTile label="Stories written" value={storyCount} accent="var(--up)" />
-            <StatTile label="Below threshold" value={belowCount} accent="var(--text-muted)" />
-          </div>
-        )}
-      </header>
+        <meta property="og:title" content="MarketSense - AI Market Move Explainer" />
+        <meta
+          property="og:description"
+          content="AI-generated daily market explainers, grounded in real data. Built with LangGraph, RAG, and guardrails."
+        />
+        <meta property="og:image" content="https://marketsense-ai-agent.vercel.app/og-image.png" />
+        <meta property="og:url" content="https://marketsense-ai-agent.vercel.app/" />
+        <meta property="og:type" content="website" />
 
-      <main style={s.main}>
-        {error && <div style={s.errorBox}>Couldn&apos;t reach the API: {error}</div>}
-
-        {!data && !error && (
-          <>
-            <LoadingSkeleton />
-            <LoadingSkeleton />
-          </>
-        )}
-
-        {data && data.classified_movers.length > 0 && (
-          <section style={{ marginBottom: "2.5rem" }}>
-            <h2 style={s.sectionTitle}>Top Movers Today</h2>
-            <TopMoversChart movers={data.classified_movers} />
-          </section>
-        )}
-
-        {data && (
-          <section>
-            <h2 style={s.sectionTitle}>Today&apos;s Stories</h2>
-
-            {data.stories.length === 0 && (
-              <div style={s.emptyState}>
-                <div style={s.emptyIcon}>📈</div>
-                <p style={{ margin: 0, fontWeight: 600 }}>No significant moves worth a story today</p>
-                <p style={{ margin: "0.25rem 0 0", color: "var(--text-muted)", fontSize: "0.9rem" }}>
-                  The classifier reviews every tracked stock and only writes when a move clears its bar.
-                </p>
-              </div>
-            )}
-
-            {data.stories.length > 0 && (
-              <div style={s.storyGrid}>
-                {data.stories.map((story) => (
-                  <StoryCard key={story.ticker} story={story} mover={moversByTicker[story.ticker]} />
-                ))}
-              </div>
-            )}
-          </section>
-        )}
-
-        {data && (
-          <section style={{ marginTop: "2.5rem" }}>
-            <h2 style={s.sectionTitle}>Tracked Movers</h2>
-
-            <div style={s.toolbar}>
-              <input
-                style={s.searchInput}
-                placeholder="Search ticker..."
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-              />
-              <div style={s.filterGroup}>
-                {FILTERS.map((f) => (
-                  <button
-                    key={f.key}
-                    onClick={() => setFilter(f.key)}
-                    style={{
-                      ...s.filterBtn,
-                      ...(filter === f.key ? s.filterBtnActive : {}),
-                    }}
-                  >
-                    {f.label}
-                  </button>
-                ))}
-              </div>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="MarketSense - AI Market Move Explainer" />
+        <meta
+          name="twitter:description"
+          content="AI-generated daily market explainers, grounded in real data. Built with LangGraph, RAG, and guardrails."
+        />
+        <meta name="twitter:image" content="https://marketsense-ai-agent.vercel.app/og-image.png" />
+      </Head>
+      <div style={s.page}>
+        <header style={s.header}>
+          <div style={s.headerInner}>
+            <div>
+              <h1 style={s.title}>
+                Market<span style={s.titleAccent}>Sense</span>
+              </h1>
+              <p style={s.subtitle}>AI-generated daily market explainers, grounded in real data</p>
             </div>
+            <LivePill />
+          </div>
 
-            <div style={s.tableWrap}>
-              <table style={s.table}>
-                <thead>
-                  <tr>
-                    <th style={s.th} onClick={() => toggleSort("ticker")}>
-                      Ticker{sortArrow("ticker")}
-                    </th>
-                    <th style={s.th} onClick={() => toggleSort("close")}>
-                      Close{sortArrow("close")}
-                    </th>
-                    <th style={s.th} onClick={() => toggleSort("pct_change")}>
-                      Change{sortArrow("pct_change")}
-                    </th>
-                    <th style={s.th} onClick={() => toggleSort("volume")}>
-                      Volume{sortArrow("volume")}
-                    </th>
-                    <th style={s.th}>Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {visibleMovers.map((m) => (
-                    <MoverRow
-                      key={m.ticker}
-                      mover={m}
-                      expanded={expandedTicker === m.ticker}
-                      onToggle={() => setExpandedTicker(expandedTicker === m.ticker ? null : m.ticker)}
-                    />
+          {data && (
+            <div style={s.statsRow}>
+              <StatTile label="Tracked stocks" value={data.classified_movers.length} />
+              <StatTile label="Stories written" value={storyCount} accent="var(--up)" />
+              <StatTile label="Below threshold" value={belowCount} accent="var(--text-muted)" />
+            </div>
+          )}
+        </header>
+
+        <main style={s.main}>
+          {error && <div style={s.errorBox}>Couldn&apos;t reach the API: {error}</div>}
+
+          {!data && !error && (
+            <>
+              <LoadingSkeleton />
+              <LoadingSkeleton />
+            </>
+          )}
+
+          {data && data.classified_movers.length > 0 && (
+            <section style={{ marginBottom: "2.5rem" }}>
+              <h2 style={s.sectionTitle}>Top Movers Today</h2>
+              <TopMoversChart movers={data.classified_movers} />
+            </section>
+          )}
+
+          {data && (
+            <section>
+              <h2 style={s.sectionTitle}>Today&apos;s Stories</h2>
+
+              {data.stories.length === 0 && (
+                <div style={s.emptyState}>
+                  <div style={s.emptyIcon}>📈</div>
+                  <p style={{ margin: 0, fontWeight: 600 }}>No significant moves worth a story today</p>
+                  <p style={{ margin: "0.25rem 0 0", color: "var(--text-muted)", fontSize: "0.9rem" }}>
+                    The classifier reviews every tracked stock and only writes when a move clears its bar.
+                  </p>
+                </div>
+              )}
+
+              {data.stories.length > 0 && (
+                <div style={s.storyGrid}>
+                  {data.stories.map((story) => (
+                    <StoryCard key={story.ticker} story={story} mover={moversByTicker[story.ticker]} />
                   ))}
-                  {visibleMovers.length === 0 && (
-                    <tr>
-                      <td colSpan={5} style={{ ...s.td, textAlign: "center", color: "var(--text-muted)" }}>
-                        No movers match this filter/search.
-                      </td>
-                    </tr>
-                  )}
-                </tbody>
-              </table>
-            </div>
-          </section>
-        )}
-      </main>
+                </div>
+              )}
+            </section>
+          )}
 
-      <footer style={s.footer}>
-        Built with LangGraph · RAG · guardrails · semantic caching &nbsp;·&nbsp; not investment advice
-      </footer>
-    </div>
+          {data && (
+            <section style={{ marginTop: "2.5rem" }}>
+              <h2 style={s.sectionTitle}>Tracked Movers</h2>
+
+              <div style={s.toolbar}>
+                <input
+                  style={s.searchInput}
+                  placeholder="Search ticker..."
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+                <div style={s.filterGroup}>
+                  {FILTERS.map((f) => (
+                    <button
+                      key={f.key}
+                      onClick={() => setFilter(f.key)}
+                      style={{
+                        ...s.filterBtn,
+                        ...(filter === f.key ? s.filterBtnActive : {}),
+                      }}
+                    >
+                      {f.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div style={s.tableWrap}>
+                <table style={s.table}>
+                  <thead>
+                    <tr>
+                      <th style={s.th} onClick={() => toggleSort("ticker")}>
+                        Ticker{sortArrow("ticker")}
+                      </th>
+                      <th style={s.th} onClick={() => toggleSort("close")}>
+                        Close{sortArrow("close")}
+                      </th>
+                      <th style={s.th} onClick={() => toggleSort("pct_change")}>
+                        Change{sortArrow("pct_change")}
+                      </th>
+                      <th style={s.th} onClick={() => toggleSort("volume")}>
+                        Volume{sortArrow("volume")}
+                      </th>
+                      <th style={s.th}>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {visibleMovers.map((m) => (
+                      <MoverRow
+                        key={m.ticker}
+                        mover={m}
+                        expanded={expandedTicker === m.ticker}
+                        onToggle={() => setExpandedTicker(expandedTicker === m.ticker ? null : m.ticker)}
+                      />
+                    ))}
+                    {visibleMovers.length === 0 && (
+                      <tr>
+                        <td colSpan={5} style={{ ...s.td, textAlign: "center", color: "var(--text-muted)" }}>
+                          No movers match this filter/search.
+                        </td>
+                      </tr>
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          )}
+        </main>
+
+        <footer style={s.footer}>
+          Built with LangGraph · RAG · guardrails · semantic caching &nbsp;·&nbsp; not investment advice
+        </footer>
+      </div>
+    </>
   );
 }
 
